@@ -8,5 +8,23 @@ function createHex() {
     }
     console.log(hexColor)
     document.body.style.backgroundColor = hexColor;
+
+    localStorage.setItem("background", hexColor);
 }
+
+function setSavedColor() {
+    const savedColor = localStorage.getItem("background");
+    if (savedColor) {
+        document.body.style.backgroundColor = savedColor;
+    }
+}
+
+function pressKey(key) {
+    if (key.code === "Space") {
+        createHex();
+    }
+}
+
+document.addEventListener("keydown", pressKey);
+window.addEventListener("DOMContentLoaded", setSavedColor);
 btn.addEventListener("click", createHex);
