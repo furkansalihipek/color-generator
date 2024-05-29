@@ -1,13 +1,46 @@
 body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
 }
 
-#btn {
-    background-color: black;
-    color: white;
-    height: 50px;
-    border-radius: 8px;
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+}
+
+.container {
+    text-align: center;
+}
+
+.colorCode {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 14px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer a {
+    text-decoration: none;
 }
