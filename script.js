@@ -1,7 +1,7 @@
 const color = document.querySelector(".colorCode");
 const button = document.querySelector(".btn");
 const drawer = document.querySelector(".drawer");
-const drawerText = document.querySelector(".drawer p");
+const drawerText = document.getElementById("drawerText");
 
 function createHex() {
     const hex = "0123456789ABCDEF";

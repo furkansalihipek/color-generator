@@ -28,13 +28,14 @@ body {
 .drawerText {
     display: none;
     position: absolute;
-    top: 20px;
-    right: 10px;
+    top: 40px;
+    right: 0;
     width: 300px;
     padding: 15px;
     border-radius: 5px;
     text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
 .drawerText p {
@@ -76,4 +77,78 @@ button {
 
 .footer a {
     text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 20px;
+    }
+
+    .drawer {
+        font-size: 20px;
+    }
+
+    .drawerText {
+        width: 250px;
+        padding: 10px;
+    }
+
+    .drawerText p {
+        font-size: 12px;
+    }
+
+    .colorCode {
+        font-size: 36px;
+    }
+
+    .footer {
+        font-size: 12px;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .icons {
+        gap: 5px;
+    }
+
+    .footer a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 18px;
+    }
+
+    .drawer {
+        font-size: 18px;
+    }
+
+    .drawerText {
+        width: 200px;
+        padding: 8px;
+    }
+
+    .drawerText p {
+        font-size: 10px;
+    }
+
+    .colorCode {
+        font-size: 28px;
+    }
+
+    .footer {
+        font-size: 10px;
+        bottom: 5px;
+        left: 5px;
+    }
+
+    .icons {
+        gap: 2px;
+    }
+
+    .footer a {
+        font-size: 10px;
+    }
 }
