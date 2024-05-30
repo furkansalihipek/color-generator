@@ -1,5 +1,7 @@
 const color = document.querySelector(".colorCode");
 const button = document.querySelector(".btn");
+const drawer = document.querySelector(".drawer");
+const drawerText = document.querySelector(".drawer p");
 
 function createHex() {
     const hex = "0123456789ABCDEF";
@@ -41,6 +43,11 @@ function adjustTextColor(bgColor) {
     icons.forEach(icon => {
         icon.style.color = textColor;
     });
+
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(button => {
+        button.style.color = textColor;
+    }); 
 }
 
 function hexToRgb(hex) {
@@ -52,6 +59,15 @@ function hexToRgb(hex) {
     };
 }
 
+function hexInfo() {
+    if (drawerText.style.display === "block") {
+        drawerText.style.display = "none";
+    }
+    else {
+        drawerText.style.display = "block";
+    }
+}
+drawer.addEventListener("click", hexInfo);
 document.addEventListener("keydown", pressKey);
 document.addEventListener("click", createHex);
 window.addEventListener("DOMContentLoaded", setSavedColor);
