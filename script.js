@@ -1,4 +1,5 @@
 const color = document.querySelector(".colorCode");
+const button = document.querySelector(".btn");
 
 function createHex() {
     const hex = "0123456789ABCDEF";
@@ -52,4 +53,5 @@ function hexToRgb(hex) {
 }
 
 document.addEventListener("keydown", pressKey);
+document.addEventListener("click", createHex);
 window.addEventListener("DOMContentLoaded", setSavedColor);
