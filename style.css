@@ -7,6 +7,8 @@ body {
     height: 100vh;
     position: relative;
     transition: background-color 0.8s, color 0.5s;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .header {
@@ -14,6 +16,31 @@ body {
     top: 20px;
     left: 20px;
     font-size: 24px;
+}
+
+.drawer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.drawerText {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.drawerText p {
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .container {
