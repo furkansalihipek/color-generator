@@ -1,7 +1,8 @@
 const color = document.querySelector(".colorCode");
-const button = document.querySelector(".btn");
-const drawer = document.querySelector(".drawer");
-const drawerText = document.getElementById("drawerText");
+const button = document.getElementById('btn');
+const drawerIcon = document.getElementById('drawerIcon');
+const drawerText = document.getElementById('drawerText');
+const drawerTextIcon = document.getElementById('drawerTextIcon');
 
 function createHex() {
     const hex = "0123456789ABCDEF";
@@ -9,12 +10,9 @@ function createHex() {
     for (let index = 0; index < 6; index++) {
         hexColor += hex[Math.floor(Math.random() * hex.length)];
     }
-    console.log(hexColor);
     document.body.style.backgroundColor = hexColor;
     color.textContent = hexColor;
-
     adjustTextColor(hexColor);
-
     localStorage.setItem("background", hexColor);
 }
 
@@ -36,7 +34,6 @@ function adjustTextColor(bgColor) {
     const rgb = hexToRgb(bgColor);
     const brightness = (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
     const textColor = brightness > 128 ? 'black' : 'white';
-
     document.body.style.color = textColor;
 
     const icons = document.querySelectorAll(".icons a");
@@ -47,7 +44,7 @@ function adjustTextColor(bgColor) {
     const buttons = document.querySelectorAll("button");
     buttons.forEach(button => {
         button.style.color = textColor;
-    }); 
+    });
 }
 
 function hexToRgb(hex) {
@@ -60,14 +57,25 @@ function hexToRgb(hex) {
 }
 
 function hexInfo() {
-    if (drawerText.style.display === "block") {
-        drawerText.style.display = "none";
-    }
-    else {
-        drawerText.style.display = "block";
+    drawerText.classList.toggle('open');
+    if (drawerText.classList.contains('open')) {
+        drawerIcon.style.visibility = "hidden";
+    } else {
+        drawerIcon.style.visibility = "visible";
     }
 }
-drawer.addEventListener("click", hexInfo);
+
+function mobileText() {
+    if (window.innerWidth < 768) {
+        button.innerText = "Touch me!";
+    } else {
+        button.innerText = "Press Space!";
+    }
+}
+
+drawerIcon.addEventListener("click", hexInfo);
+drawerTextIcon.addEventListener("click", hexInfo);
 document.addEventListener("keydown", pressKey);
-document.addEventListener("click", createHex);
+button.addEventListener("click", createHex);
 window.addEventListener("DOMContentLoaded", setSavedColor);
+window.addEventListener("resize", mobileText);

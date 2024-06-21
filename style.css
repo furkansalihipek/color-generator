@@ -7,8 +7,7 @@ body {
     height: 100vh;
     position: relative;
     transition: background-color 0.8s, color 0.5s;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .header {
@@ -26,16 +25,27 @@ body {
 }
 
 .drawerText {
-    display: none;
-    position: absolute;
-    top: 40px;
-    right: 0;
+    position: fixed;
+    top: 0;
+    right: -350px;
     width: 300px;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: left;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s ease;
     z-index: 1000;
+}
+
+.drawerText.open {
+    right: 0;
+}
+
+.drawerText i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
 }
 
 .drawerText p {
@@ -77,6 +87,7 @@ button {
 
 .footer a {
     text-decoration: none;
+    color: inherit;
 }
 
 @media (max-width: 768px) {
@@ -84,13 +95,13 @@ button {
         font-size: 20px;
     }
 
-    .drawer {
-        font-size: 20px;
-    }
-
     .drawerText {
         width: 250px;
         padding: 10px;
+    }
+
+    .drawerText i {
+        font-size: 20px;
     }
 
     .drawerText p {
@@ -121,13 +132,13 @@ button {
         font-size: 18px;
     }
 
-    .drawer {
-        font-size: 18px;
-    }
-
     .drawerText {
         width: 200px;
         padding: 8px;
+    }
+
+    .drawerText i {
+        font-size: 18px;
     }
 
     .drawerText p {
