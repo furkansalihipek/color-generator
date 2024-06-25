@@ -61,15 +61,19 @@ function hexInfo() {
     if (drawerText.classList.contains('open')) {
         drawerIcon.style.visibility = "hidden";
     } else {
-        drawerIcon.style.visibility = "visible";
+        setTimeout(() => {
+            drawerIcon.style.visibility = "visible";
+        }, 250);
     }
 }
 
 function mobileText() {
     if (window.innerWidth < 768) {
         button.innerText = "Touch me!";
+        button.disabled = false;
     } else {
         button.innerText = "Press Space!";
+        button.disabled = true;
     }
 }
 
@@ -77,5 +81,5 @@ drawerIcon.addEventListener("click", hexInfo);
 drawerTextIcon.addEventListener("click", hexInfo);
 document.addEventListener("keydown", pressKey);
 button.addEventListener("click", createHex);
-window.addEventListener("DOMContentLoaded", setSavedColor);
+window.addEventListener("DOMContentLoaded", setSavedColor(), mobileText())
 window.addEventListener("resize", mobileText);
