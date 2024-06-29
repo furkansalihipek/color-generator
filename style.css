@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     overflow-x: hidden;
     overflow-y: hidden;
     width: 100%;
@@ -36,6 +37,8 @@ body {
     width: 300px;
     height: 100%;
     padding: 20px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     transition: right 0.4s ease;
     z-index: 1000;
@@ -91,12 +94,15 @@ button {
 }
 
 @media (max-width: 768px) {
+    body {
+        height: 100vh;
+    }
+    
     .header {
         font-size: 20px;
     }
 
     .drawerText {
-        backdrop-filter: blur(5px);
         width: 250px;
         padding: 10px;
     }
@@ -129,6 +135,10 @@ button {
 }
 
 @media (max-width: 480px) {
+    body {
+        height: 100vh;
+    }
+    
     .header {
         font-size: 18px;
     }
