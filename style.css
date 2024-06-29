@@ -100,7 +100,7 @@ button {
     }
 
     .container {
-        height: calc(100vh - 140px);
+        height: calc(100vh - 100px);
     }
 
     .drawerText {
@@ -122,8 +122,10 @@ button {
 
     .footer {
         font-size: 12px;
-        bottom: 10px;
-        left: 10px;
+    }
+
+    .text{
+
     }
 
     .icons {
