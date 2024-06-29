@@ -6,6 +6,10 @@ body {
     height: 100%;
 }
 
+.header, .footer {
+    flex-shrink: 0;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -80,7 +84,8 @@ button {
 }
 
 .footer {
-    display: column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
