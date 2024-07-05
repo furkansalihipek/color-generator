@@ -100,16 +100,14 @@ button {
 }
 
 @media (max-width: 768px) {
-    body {
-        min-height: 100vh;
-    }
-
     .header {
         font-size: 20px;
+        padding: 15px;
     }
 
     .container {
-        height: auto;
+        flex-direction: column;
+        padding: 10px;
     }
 
     .drawerText {
@@ -131,6 +129,7 @@ button {
 
     .footer {
         font-size: 12px;
+        padding: 10px;
     }
 
     .icons {
@@ -143,16 +142,14 @@ button {
 }
 
 @media (max-width: 480px) {
-    body {
-        min-height: 100vh;
-    }
-
     .header {
         font-size: 18px;
+        padding: 10px;
     }
 
     .container {
-        height: auto
+        flex-direction: column;
+        padding: 5px;
     }
 
     .drawerText {
@@ -174,8 +171,7 @@ button {
 
     .footer {
         font-size: 10px;
-        bottom: 5px;
-        left: 5px;
+        padding: 5px;
     }
 
     .icons {
